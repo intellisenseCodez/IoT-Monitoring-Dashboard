@@ -1,6 +1,6 @@
 # Provider
 provider "aws" {
-  region = "us-west-2"  # Change to your preferred region
+  region = "us-west-2"  # AWS region
 }
 
 # 🔸 S3 Module - Bucket for Firehose delivery and Glue Crawling
@@ -30,7 +30,7 @@ module "iot_core" {
   mqtt_topic        = "iot/energy"
   firehose_name     = module.firehose.delivery_stream_name
   firehose_role_arn = module.firehose.firehose_role_arn
-  device_certificate_arn = "arn:aws:iot:us-west-2:123456789012:cert/abc123"  # Replace with your IoT device certificate ARN
+  device_certificate_arn = "arn:aws:iot:us-west-2:123456789012:cert/c8f584cc98c1345d280eea4621fd7d2aacb57ecb79875233b8e83bd7de86e34a"  # IoT device certificate ARN
 }
 
 # 🔸 Glue and Athena Module for querying IoT data
